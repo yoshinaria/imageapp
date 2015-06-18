@@ -1,0 +1,27 @@
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Description</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+
+  <thead>
+  <tbody class = "table-striped">
+    <% @images.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.desc %></td>
+        <td><%= i.tags %></td>
+        <td><%= link_to 'Show', i %></td>
+        <td><%= link_to 'Edit', edit_image_path(i) %></td>
+        <td><%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+ <%= link_to 'Add New Image', new_image_path, class: "btn btn-primary" %>
